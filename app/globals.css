@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 21, 21, 22;
+  --background-end-rgb: 25, 25, 25;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 123, 123, 123;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.btn {
+  text-transform: none;
+}
+
+@media (max-width: 690px) {
+  html{
+    font-size: 13px;
+  }
+}
+.radius{
+  border-radius: 20px;
+}
+
+/* ------------------ scroll styles ------------------- */
+
+::-webkit-scrollbar{
+  background: linear-gradient(45deg, rgb(17, 24, 52), rgb(3, 109, 231));
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(45deg, rgb(17, 52, 52), teal);
+}
+
+/* ------------------ scroll styles ------------------- */
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.swiper-wrapper{
+  border-radius: 10px;
+}
+.swiper__container{
+  height: 400px;
+}
+
+.video__slider-box{
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, .4);
+}
+
+.video__slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  opacity: .4;
+}
+
+
+.slider__info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 10;
+}
+
+.text__animation{
+  height: 35px;
+  text-align: center;
+  overflow: hidden;
+}
+.text__animtion-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.anim__text{
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: gold;
+  animation: animation__text 5s ease-in-out infinite alternate;
+}
+
+@keyframes animation__text {
+  0%{
+    transform: translateY(0);
+  }
+  25%{
+    transform: translateY(-35px);
+  }
+  50%{
+    transform: translateY(-73px);
+  }
+  75%{
+    transform: translateY(-35px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 691px) {
+  .text__animation{
+    height: 30px;
+  }
+  @keyframes animation__text {
+    0%{
+      transform: translateY(0);
+    }
+    25%{
+      transform: translateY(-28px);
+    }
+    50%{
+      transform: translateY(-59px);
+    }
+    75%{
+      transform: translateY(-28px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+.search__box{
+  display: none;
+}
+
+.drawer{
+  background-color: #222831;
+  color: teal;
+}
+
+.bg-base-200{
+  background-color: #fff;
+  color: teal;
+}
+
+.flex__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product__card{
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow:  1px 3px 3px rgba(0, 0, 0, .4);
+  scale: .98;
+  transition: all .3s ease;
+}
+
+.product__card:hover{
+  scale: 1;
+}
+
+.product__img-box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__img-box-inner{
+  width: 200px;
+  height: 200px;
+}
+
+.product__img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.steps .step::after{
+  background-color: white;
+  color: #222831;
+}
+
+.steps .step-accent:after{
+  background-color: #00D7C0;
+}
+
+.steps .step::before{
+  background-color: white;
+  color: #222831;
+}
+
+@media (max-width: 768px){
+  .flex__container{
+    align-items: center;
+    justify-content: center;
+  }
+  .product__img-box{
+    justify-content: flex-start;
+  }
+  .product__card{
+    width: 100%;
+  }
+  .product__img-box{
+    width: 200px;
+  }
+  .product__img-box-inner{
+    width: 170px;
+    height: 170px;
+  }
+}
+
