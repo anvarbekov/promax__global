@@ -14,7 +14,7 @@ const Form = () => {
   const { data: session } = useSession()
 
   const params = useSearchParams()
-  let callbackUrl = params.get('callbackUrl') || '/'
+  let callbackUrl = params.get('callbackUrl') || 'https://promaxglobal.vercel.app/'
   const router = useRouter()
 
   const {
